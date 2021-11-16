@@ -123,8 +123,8 @@ Export-Csv -Path "$env:HOMEPATH\Desktop\pcsinventory.csv" -NoTypeInformation
     Select-Object -Property $hotfixProps | 
     Sort-Object InstalledOn -Descending
     
-    $WarrantySerial = (gwmi win32_bios).SerialNumber
-    $GetDell = (gwmi win32_bios).Manufacturer
+    $WarrantySerial = (Get-WmiObject win32_bios).SerialNumber
+    $GetDell = (Get-WmiObject win32_bios).Manufacturer
     if ($GetDell -like "*Dell*"){
     $DellWarrantyInfo = get-DellWarranty -SourceDevice $computer
     }

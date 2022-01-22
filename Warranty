@@ -1,9 +1,9 @@
-
+$DellClientID = "l73dc87328f682469b8b59ee0a76a96dc3"
+$DellClientSecret = "e03ef380eab946f7bd8da78cedec3a54"
 
 
 function get-DellWarranty([Parameter(Mandatory = $true)]$SourceDevice, $client) {
-$DellClientID = "l73dc87328f682469b8b59ee0a76a96dc3"
-$DellClientSecret = "e03ef380eab946f7bd8da78cedec3a54"
+
     $today = Get-Date -Format yyyy-MM-dd
     $AuthURI = "https://apigtwb2c.us.dell.com/auth/oauth/v2/token"
     if ($Global:TokenAge -lt (get-date).AddMinutes(-55)) { $global:Token = $null }
